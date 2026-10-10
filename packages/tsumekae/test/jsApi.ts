@@ -9,7 +9,7 @@
  *
  * ## 出典と更新の手順
  *
- * https://cybozu.dev/ja/kintone/docs/js-api/ の一覧（2026-09-08 時点）。
+ * https://cybozu.dev/ja/kintone/docs/js-api/ の一覧（2026-10-10 時点）。
  * kintone に API が増えたら
  *
  *   1. この一覧に足す → `jsApi.test.ts` が「宣言に無い」で落ちる
@@ -61,8 +61,10 @@ export const OFFICIAL_JS_APIS = [
 	"kintone.app.record.get",
 	"kintone.app.record.getActionButtonDisplayState",
 	"kintone.app.record.getActions",
+	"kintone.app.record.getAddTableRowButtonsDisplayState",
 	"kintone.app.record.getAssignees",
 	"kintone.app.record.getChangeAssigneeButtonDisplayState",
+	"kintone.app.record.getDeleteTableRowButtonsDisplayState",
 	"kintone.app.record.getDuplicateRecordButtonDisplayState",
 	"kintone.app.record.getEditRecordButtonDisplayState",
 	"kintone.app.record.getFieldElement",
@@ -84,7 +86,9 @@ export const OFFICIAL_JS_APIS = [
 	"kintone.app.record.setFieldStyle",
 	"kintone.app.record.setGroupFieldOpen",
 	"kintone.app.record.showActionButton",
+	"kintone.app.record.showAddTableRowButtons",
 	"kintone.app.record.showChangeAssigneeButton",
+	"kintone.app.record.showDeleteTableRowButtons",
 	"kintone.app.record.showDuplicateRecordButton",
 	"kintone.app.record.showEditRecordButton",
 	"kintone.app.record.showPager",
@@ -137,6 +141,8 @@ export const OFFICIAL_JS_APIS = [
 	"kintone.mobile.app.getViewSelectorItemsDisplayState",
 	"kintone.mobile.app.record.get",
 	"kintone.mobile.app.record.getActionButtonDisplayState",
+	"kintone.mobile.app.record.getAddTableRowButtonsDisplayState",
+	"kintone.mobile.app.record.getDeleteTableRowButtonsDisplayState",
 	"kintone.mobile.app.record.getEditRecordButtonDisplayState",
 	"kintone.mobile.app.record.getFieldElement",
 	"kintone.mobile.app.record.getFieldStyle",
@@ -151,6 +157,8 @@ export const OFFICIAL_JS_APIS = [
 	"kintone.mobile.app.record.setFieldStyle",
 	"kintone.mobile.app.record.setGroupFieldOpen",
 	"kintone.mobile.app.record.showActionButton",
+	"kintone.mobile.app.record.showAddTableRowButtons",
+	"kintone.mobile.app.record.showDeleteTableRowButtons",
 	"kintone.mobile.app.record.showEditRecordButton",
 	"kintone.mobile.app.record.showPager",
 	"kintone.mobile.app.record.showStatusActionButton",

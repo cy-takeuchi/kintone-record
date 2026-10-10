@@ -53,7 +53,7 @@ biome はリポジトリのルートで 1 回だけ回すので、ここには�
 
 ## 実測とドキュメントを混ぜない
 
-`src/kintone.ts` は公式ドキュメントの **166 API すべて**を宣言するが、
+`src/kintone.ts` は公式ドキュメントの **174 API すべて**（2026-10-10 時点）を宣言するが、
 **実測が根拠なのは 4 個だけ**（`events.on` の event と `record.get` / `set` のレコード）。
 残りはドキュメントを読んで書いたもので、**返る値の形は確かめていない**。
 
@@ -154,7 +154,7 @@ kintone 自体の挙動は [`../../docs/KINTONE.md`](../../docs/KINTONE.md)、
 | `src/build/` | `field.*` の構築子と `setValue` |
 | `src/convert/` | REST / `set()` への変換。**除く対象が違う** |
 | `src/probe/` | 実測の採取カスタマイズ（ブラウザで動く） |
-| `src/kintone.ts` | `kintone` グローバルの宣言。公式 166 API |
+| `src/kintone.ts` | `kintone` グローバルの宣言。公式 174 API |
 | `src/types/jsApi.ts` | JS API の値の型。**根拠はドキュメント**。DOM を直接参照しない |
 | `test/` | 種別の網羅とフィクスチャ突き合わせ |
 | `tools/fixture/` | 採取結果の正規化 |

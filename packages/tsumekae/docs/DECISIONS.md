@@ -2634,3 +2634,28 @@ TS 7 で `field.subtableRow` の `id?: never` が宣言出力から落ちた前�
 なること、作成画面系が `SavedRecordWithMeta` を満たさないことを足した。
 `DetailShowEvent` と `IndexShowEvent` を素の型に戻す変異で、追加したテストが
 落ちることを確かめた。`test/dist/consumer.ts` にも `.d.ts` 出力後の確認を足した。
+
+## 2026-10 の JS API 更新（テーブルの行ボタン）に追随する
+
+**2026-10-10。** kintone の JS API 更新
+（<https://cybozu.dev/ja/kintone/news/api-updates/2026-10/>）で、
+テーブルフィールドの行の追加／削除ボタンを操作する 4 組（PC・モバイルで 8 個）が
+公式一覧に追加された。
+
+```
+kintone.app.record.showAddTableRowButtons(fieldCode, state)
+kintone.app.record.getAddTableRowButtonsDisplayState(fieldCode)
+kintone.app.record.showDeleteTableRowButtons(fieldCode, state)
+kintone.app.record.getDeleteTableRowButtonsDisplayState(fieldCode)
+```
+
+（モバイル版 `kintone.mobile.app.record.*` も同形。）
+
+既存の `showActionButton(action, state)` / `getActionButtonDisplayState(action)`
+と同じ骨格（第 1 引数に文字列、以降は `Api.Visibility` の show/get 対）なので、
+そのまま倣って `src/kintone.ts` に足した。**根拠はドキュメントで、未実測**
+（このファイル自体がドキュメント由来の API を含む前提は「実測とドキュメントを
+混ぜない」の通り）。
+
+`test/jsApi.ts` の `OFFICIAL_JS_APIS` に 8 個追加し、166 → 174 個になった。
+`jsApi.test.ts` の「数が合っている」が自動で縛るので、個別のテストは足していない。
