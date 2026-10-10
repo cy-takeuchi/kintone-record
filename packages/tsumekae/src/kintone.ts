@@ -17,7 +17,7 @@ export type { Api } from "./types/jsApi.js";
  *
  * 公式ドキュメントの
  * [JavaScript API 一覧](https://cybozu.dev/ja/kintone/docs/js-api/)に
- * 載っている **166 個すべて**。
+ * 載っているものすべて（2026-10-10 時点で 174 個）。
  *
  * `@kintone/dts-gen` は 51 個しか宣言していない（公式一覧の 31%）。
  * その 51 個は公式一覧の真部分集合なので、**dts-gen は要らない**。
@@ -391,6 +391,25 @@ declare global {
 				function getStatusActionButtonDisplayState(
 					action: string,
 				): Promise<Api.Visibility>;
+				/**
+				 * テーブルの行の追加ボタン。**フィールドコードを第 1 引数に取る**。
+				 * 2026-10 の JS API 更新で追加（ドキュメント根拠、未実測）
+				 */
+				function showAddTableRowButtons(
+					fieldCode: string,
+					state: Api.Visibility,
+				): Promise<void>;
+				function getAddTableRowButtonsDisplayState(
+					fieldCode: string,
+				): Promise<Api.Visibility>;
+				/** テーブルの行の削除ボタン。理由は {@link showAddTableRowButtons} と同じ */
+				function showDeleteTableRowButtons(
+					fieldCode: string,
+					state: Api.Visibility,
+				): Promise<void>;
+				function getDeleteTableRowButtonsDisplayState(
+					fieldCode: string,
+				): Promise<Api.Visibility>;
 			}
 		}
 
@@ -468,6 +487,21 @@ declare global {
 					): Promise<void>;
 					function getStatusActionButtonDisplayState(
 						action: string,
+					): Promise<Api.Visibility>;
+					/** 理由は PC 版 {@link showAddTableRowButtons} と同じ */
+					function showAddTableRowButtons(
+						fieldCode: string,
+						state: Api.Visibility,
+					): Promise<void>;
+					function getAddTableRowButtonsDisplayState(
+						fieldCode: string,
+					): Promise<Api.Visibility>;
+					function showDeleteTableRowButtons(
+						fieldCode: string,
+						state: Api.Visibility,
+					): Promise<void>;
+					function getDeleteTableRowButtonsDisplayState(
+						fieldCode: string,
 					): Promise<Api.Visibility>;
 				}
 			}
